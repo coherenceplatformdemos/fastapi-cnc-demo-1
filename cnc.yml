@@ -1,0 +1,8 @@
+services:
+  app:
+     # activating the venv is due to using nixpacks, if you write your own dockerfile you don't need this part of the command
+    command: ". /opt/venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    x-cnc:
+      type: backend
+    build:
+      context: .
